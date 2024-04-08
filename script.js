@@ -22,8 +22,7 @@ let fruits = ['orange', 'apple', 'banana', 'pawpaw', 'pear'];
 let books = ['harry potter','john wick','hunger games']
 
 function reverseArray(arr){
-   console.log( arr.reverse().join('&'));
-        
+   console.log( arr.reverse().join('&'));      
 }
 console.log(reverseArray(fruits));
 console.log(reverseArray(books));
@@ -31,14 +30,20 @@ console.log(reverseArray(books));
 
 // Question 4
 const text = document.querySelector('.text')
-let personOne = {firstName: 'andy', lastName: 'ugbawa', age: 40, stateOfOrigin: 'Delta' };
+const personOne = {};
+    personOne.firstName= 'Uyo';
+    personOne.lastName= 'Akpujiha';
+    personOne.age= '32';
+    personOne.stateOfOrigin= 'Delta';
+console.log(personOne);
 
 let person = document.createElement('p');
-person.setAttribute('id','pers' );
 text.appendChild(person);
 person.style.backgroundColor ='lightblue'
 person.style.fontSize ='2em';
 person.style.color ='red';
-person.innerHTML = " firstName: 'andy', lastName: 'ugbawa', age: 40, stateOfOrigin: 'Delta' ";
+person.innerHTML=JSON.stringify(personOne);
 
 // Question 5
+const newArr= [personOne.age,personOne.lastName,personOne.stateOfOrigin];
+console.log(newArr);
