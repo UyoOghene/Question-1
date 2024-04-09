@@ -1,20 +1,30 @@
 // Question 1
+let myNameString = 'indaboskiBahoose';
 function names(myNameString){
-    let fname =myNameString.slice(0,5);
-    let lastname = myNameString.slice(5);
-    console.log(lastname ,fname);
+    for (let i = 0; i < myNameString.length; i++) {
+            if (myNameString[i] === myNameString[i].toUpperCase()) {
+                let fname= myNameString[0].toUpperCase()+myNameString.slice(1,i)
+                let lastname = myNameString.slice(i);
+                return `${lastname} ${fname}`;
+            }
+        }
     }
-console.log(names('manosAkpujiha'));
-console.log(names('fejirAkpujiha'));
+    
+console.log(names(myNameString));
 
 
 // Question 2
-function multNames(fname,midname,lname){
-let fullname = fname+'-'+midname+'-'+lname;
-console.log(fullname);
+let firstName = 'Andy'; let middleName = 'Eriarwe'; 
+let lastName = 'Ugbawa'
+function multNames(firstName,middleName,lastName){
+    let f2name= firstName.toLowerCase();
+    let mid2name = middleName.toLowerCase();
+    let l2name = lastName.toLowerCase();
+    let fullname = `${l2name}-${f2name}-${mid2name}`;
+    return fullname;
 }
 
-multNames('Uyo','oghene','Akpujiha');
+console.log(multNames(firstName,middleName,lastName));
 
 
 // Question 3
@@ -22,28 +32,40 @@ let fruits = ['orange', 'apple', 'banana', 'pawpaw', 'pear'];
 let books = ['harry potter','john wick','hunger games']
 
 function reverseArray(arr){
-   console.log( arr.reverse().join('&'));      
+   return arr.reverse().join('&');      
 }
 console.log(reverseArray(fruits));
-console.log(reverseArray(books));
 
 
 // Question 4
-const text = document.querySelector('.text')
-const personOne = {};
-    personOne.firstName= 'Uyo';
-    personOne.lastName= 'Akpujiha';
-    personOne.age= '32';
-    personOne.stateOfOrigin= 'Delta';
-console.log(personOne);
+let personOne = {   firstName: 'andy',
+                    lastName: 'ugbawa', age: 40,
+                    stateOfOrigin: 'Delta' 
+                }
 
-let person = document.createElement('p');
-text.appendChild(person);
-person.style.backgroundColor ='lightblue'
-person.style.fontSize ='2em';
-person.style.color ='red';
-person.innerHTML=JSON.stringify(personOne);
+const text = document.querySelector('.text')
+let qfour= document.createElement('p');
+
+function four(){
+   qfour.setAttribute('id','quefour');
+   qfour.setAttribute('firstname','andy');
+   qfour.setAttribute('lastname','ugbawa');
+   qfour.setAttribute('age','40');
+   qfour.setAttribute('stateOfOrigin','Delta');
+   text.appendChild(qfour);
+}
+four(personOne);
+
 
 // Question 5
-const newArr= [personOne.age,personOne.lastName,personOne.stateOfOrigin];
-console.log(newArr);
+// e.g. newArray = ['andy', 'ugbawa', 'delta'];
+function five(){
+    let qfname= qfour.getAttribute("firstname");
+    // let qage= qfour.getAttribute("age");
+    let qlastname= qfour.getAttribute("lastname");
+    let qorigin= qfour.getAttribute("stateOfOrigin");
+    let newArr=[qfname,qlastname,qorigin];
+    return newArr;
+    // console.log(newArr);
+}
+five();
