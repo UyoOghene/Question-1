@@ -39,33 +39,35 @@ console.log(reverseArray(fruits));
 
 // Question 4
 let personOne = {   firstName: 'andy',
-                    lastName: 'ugbawa', age: 40,
+                    lastName: 'ugbawa',
+                    age: 40,
                     stateOfOrigin: 'Delta' 
                 }
 
 const text = document.querySelector('.text')
 let qfour= document.createElement('p');
+text.appendChild(qfour);
+qfour.setAttribute('first-name',personOne.firstName);
+qfour.setAttribute('last-name',personOne.lastName);
+qfour.setAttribute('state-of-origin',personOne.stateOfOrigin);
+qfour.setAttribute('age',personOne.age);
 
-function four(){
-   qfour.setAttribute('id','quefour');
-   qfour.setAttribute('firstname','andy');
-   qfour.setAttribute('lastname','ugbawa');
-   qfour.setAttribute('age','40');
-   qfour.setAttribute('stateOfOrigin','Delta');
-   text.appendChild(qfour);
+function four() {
+    for (let key in personOne) {
+        console.log(key, personOne[key]);
+    }
+    return qfour;                                       
 }
-four(personOne);
-
+console.log(four(personOne));
 
 // Question 5
 // e.g. newArray = ['andy', 'ugbawa', 'delta'];
 function five(){
-    let qfname= qfour.getAttribute("firstname");
-    // let qage= qfour.getAttribute("age");
-    let qlastname= qfour.getAttribute("lastname");
-    let qorigin= qfour.getAttribute("stateOfOrigin");
-    let newArr=[qfname,qlastname,qorigin];
+    let qfname= qfour.getAttribute("first-name");
+    let qage= qfour.getAttribute("age");
+    let qlastname= qfour.getAttribute("last-name");
+    let qorigin= qfour.getAttribute("state-of-origin");
+    let newArr=[qfname,qlastname,qorigin,qage];
     return newArr;
-    // console.log(newArr);
 }
-five();
+console.log(five(personOne));
